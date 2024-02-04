@@ -30,30 +30,30 @@ def interact_with_gpt(system_message: str, user_message: str) -> str:
 def extract_prescription_info(prescription_text: str) -> str:
     return interact_with_gpt(
         "You are an AI that helps pharmacists analyze prescriptions.",
-        f"Analyze the prescription and provide only factual bullet points, make sure that you dont include any conversational aspect in the response: {prescription_text}"
+        f"Analyze the prescription and list essential details in concise bullet points without any conversational elements: {prescription_text}"
     )
 
 def get_drug_information(drug_name: str) -> str:
     return interact_with_gpt(
         "You are an AI that provides drug information.",
-        f"Provide factual bullet points about the drug, make sure that you dont include any conversational aspect in the response: {drug_name}"
+        f"Provide concise bullet points about the drug, focusing on factual information without conversational elements: {drug_name}"
     )
 
 def validate_prescription(prescription_text: str) -> str:
     return interact_with_gpt(
         "You are an AI that validates prescriptions for errors.",
-        f"Identify errors in the prescription and provide factual bullet points, make sure that you dont include any conversational aspect in the response: {prescription_text}"
+        f"Review the prescription for errors and list them in factual bullet points, avoiding conversational language: {prescription_text}"
     )
 
 def check_drug_interactions(drug_list: List[str]) -> str:
     drug_list_str = ", ".join(drug_list)
     return interact_with_gpt(
         "You are an AI that checks for drug interactions.",
-        f"Check for interactions between these drugs and provide factual bullet points, make sure that you dont include any conversational aspect in the response: {drug_list_str}"
+        f"Identify interactions between the following drugs and summarize in concise bullet points, omitting conversational language: {drug_list_str}"
     )
-    
+
 def search_drug_or_condition(query: str) -> str:
     return interact_with_gpt(
         "You are an AI that helps pharmacists search for drug information and conditions.",
-        f"Search and provide factual bullet points: {query}, make sure that you dont include any conversational aspect in the response"
+        f"Search for factual information about the given query and present in concise bullet points, avoiding conversational elements: {query}"
     )

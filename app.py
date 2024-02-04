@@ -14,13 +14,11 @@ def index():
 
 @app.route('/img/<path:filename>')
 def send_img(filename):
-    # Assuming images are stored in 'static/img'
     img_directory = os.path.join(current_app.root_path, 'static', 'img')
     return send_from_directory(img_directory, filename)
 
 def validate_and_process_request(request_data, process_function):
     try:
-        # Validate request data here if needed
         response = process_function(request_data)
         return jsonify(success=True, response=response)
     except Exception as e:
