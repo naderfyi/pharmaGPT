@@ -2,38 +2,51 @@ body {
     font-family: Arial, sans-serif;
     max-width: 800px;
     margin: auto;
+    background-color: #f8f9fa;
 }
-h1 {
+
+h1, h2.subtitle {
     text-align: center;
+}
+
+h1 {
     margin-top: 0;
 }
+
 h2.subtitle {
-    text-align: center;
     font-size: 18px;
     font-weight: normal;
     margin-top: -15px;
     margin-bottom: 20px;
 }
+
 img.logo {
     display: block;
     max-width: 50px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     margin-bottom: 0px;
 }
+
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
 }
+
 label {
     font-weight: bold;
 }
-textarea, input[type="text"], select {
+
+textarea, input[type="text"], select, .form-select {
     width: 100%;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    background-color: #fff;
 }
-button {
+
+.button, button {
     width: 200px;
     align-self: center;
     background-color: #007BFF;
@@ -44,37 +57,60 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
-button:hover {
+
+.button:hover, button:hover {
     background-color: #0056B3;
 }
-#response {
+
+#response, .response-area {
     border: 1px solid #ccc;
     padding: 10px;
     min-height: 100px;
+    overflow-y: auto;
 }
+
 .logo {
     width: 100px;
     height: auto;
 }
-.response-area {
-    height: calc(1.5em * 4 + 1rem + 2px);
-    overflow-y: auto;
-}
-@media (max-width: 991px) {
-    .response-area {
-        height: auto;
-    }
-}
+
 .card-header h2 {
     font-size: 1.25rem;
 }
+
 .card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+    border: 1px solid #ced4da;
     height: 100%; 
 }
+
 .d-flex {
     display: flex;
     flex-direction: column;
 }
+
 .flex-grow-1 {
     flex-grow: 1;
+}
+
+.label-file-upload, .custom-file-upload {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    display: inline-block;
+    cursor: pointer;
+    color: #495057;
+    width: 100%;
+    text-align: left;
+}
+
+.label-file-upload:hover, .custom-file-upload:hover {
+    background-color: #e2e6ea;
+}
+
+@media (max-width: 991px) {
+    .response-area {
+        height: auto;
+    }
 }
