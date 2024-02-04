@@ -3,7 +3,7 @@ from flask import send_from_directory, current_app
 from flask_cors import CORS
 import os
 from pharmaGPT import (extract_prescription_info, get_drug_information, validate_prescription, 
-                       check_drug_interactions, search_drug_or_condition)
+                       check_drug_interactions, search_drug_or_condition, preprocess_prescription_text)
 
 from werkzeug.utils import secure_filename
 import pytesseract
@@ -59,7 +59,12 @@ def upload_and_process_image():
         file.save(file_path)
         
         # Extract text from the uploaded image
-        request_data = extract_text_from_image(file_path)
+        ocr_text = extract_text_from_image(file_path)
+        
+        # Preprocess the extracted OCR text with GPT-3 to correct and structure it
+        # This function should be defined in your pharmaGPT module
+        request_data = preprocess_prescription_text(ocr_text)
+
     elif request.json and 'input' in request.json:
         request_data = request.json['input']
 
@@ -79,6 +84,7 @@ def upload_and_process_image():
     if not process_function:
         return jsonify({'error': 'Invalid action'}), 400
 
+    # Call the processing function with the preprocessed or input data
     return validate_and_process_request(request_data, process_function)
 
 @app.route('/img/<path:filename>')

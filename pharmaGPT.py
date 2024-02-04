@@ -57,3 +57,14 @@ def search_drug_or_condition(query: str) -> str:
         "You are an AI that helps pharmacists search for drug information and conditions.",
         f"Search for factual information about the given query and present in concise bullet points, avoiding conversational elements: {query}"
     )
+
+def preprocess_prescription_text(ocr_text: str) -> str:
+    system_message = (
+        "The following text is a raw OCR output of a prescription, which may contain unclear or garbled text. "
+        "Use contextual understanding to interpret the text correctly. "
+        "Extract and list only the medications and their details such as dosage, frequency, and quantity. "
+        "Correct any unclear text and ignore any non-medication information like doctor's name, patient's name, etc."
+    )
+
+    user_message = ocr_text
+    return interact_with_gpt(system_message, user_message)
