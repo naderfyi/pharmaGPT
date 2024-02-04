@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
+h2.subtitle {
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+img.logo {
+    display: block;
+    max-width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+}
+textarea, input[type="text"], select {
+    width: 100%;
+}
+button {
+    width: 200px;
+    align-self: center;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056B3;
+}
+#response {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 100px;
+}
+.logo {
+    width: 100px;
+    height: auto;
+}
+.response-area {
+    height: calc(1.5em * 4 + 1rem + 2px);
+    overflow-y: auto;
+}
+@media (max-width: 991px) {
+    .response-area {
+        height: auto;
+    }
+}
+.card-header h2 {
+    font-size: 1.25rem;
+}
+.card {
+    height: 100%; 
+}
+.d-flex {
+    display: flex;
+    flex-direction: column;
+}
+.flex-grow-1 {
+    flex-grow: 1;
+}
