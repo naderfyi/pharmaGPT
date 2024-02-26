@@ -1,4 +1,4 @@
-# PharmaGPT
+# PharmaAI Advisor
 
 PharmaGPT is a Flask-based web service designed to assist pharmacists and healthcare professionals by providing an easy-to-use interface for analyzing prescriptions, retrieving drug information, validating prescriptions, checking drug interactions, and searching for drugs or conditions using AI technology.
 
